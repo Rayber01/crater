@@ -6,6 +6,8 @@ use Crater\CompanySetting;
 use Crater\Currency;
 use Crater\Company;
 use Crater\Invoice;
+use Crater\InvoiceItem;
+use Crater\Item;
 use Crater\Payment;
 use Crater\PaymentMethod;
 use Carbon\Carbon;
@@ -102,6 +104,17 @@ class PaymentController extends Controller
                 $invoice->status = Invoice::STATUS_COMPLETED;
                 $invoice->paid_status = Invoice::STATUS_PAID;
                 $invoice->due_amount = 0;
+                $invoice_item = InvoiceItem::all()->where('invoice_id',$request->invoice_id);
+                foreach ($invoice_item as $key => $value) {
+                    $item = Item::find($value->item_id);
+                    $item->name = $item->name;
+                    $item->unit_id = $item->unit_id;
+                    $item->description = $item->description;
+                    $item->company_id = $item->company_id;
+                    $item->price = $item->price;
+                    $item->quantity = $item->quantity-$value->quantity;
+                    $item->save();
+                }
             } elseif ($invoice && $invoice->due_amount != $request->amount) {
                 $invoice->due_amount = (int)$invoice->due_amount - (int)$request->amount;
                 if ($invoice->due_amount < 0) {

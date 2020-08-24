@@ -540,6 +540,14 @@ class CurrenciesTableSeeder extends Seeder
                 'thousand_separator' => '.',
                 'decimal_separator' => ','
             ],
+            [
+                'name' => 'Bolivares Fuertes',
+                'code' => 'VES',
+                'symbol' => 'Bs.S',
+                'precision' => '2',
+                'thousand_separator' => '.',
+                'decimal_separator' => ','
+            ],
         ];
 
         foreach ($currencies as $currency) {

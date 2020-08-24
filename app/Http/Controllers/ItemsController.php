@@ -61,6 +61,7 @@ class ItemsController extends Controller
         $item->description = $request->description;
         $item->company_id = $request->header('company');
         $item->price = $request->price;
+        $item->quantity = $request->quantity;
         $item->save();
 
         if ($request->has('taxes')) {
@@ -91,6 +92,7 @@ class ItemsController extends Controller
         $item->unit_id = $request->unit_id;
         $item->description = $request->description;
         $item->price = $request->price;
+        $item->quantity = $request->quantity;
         $item->save();
 
         $oldTaxes = $item->taxes->toArray();

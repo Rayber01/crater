@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInvoiceItemsTable extends Migration
+class CreateItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,17 @@ class CreateInvoiceItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('invoice_items', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('description')->nullable();
-            $table->string('discount_type');
+            $table->string('unit')->nullable();
             $table->unsignedBigInteger('price');
-            $table->decimal('quantity', 15, 2);
-            $table->decimal('discount', 15, 2)->nullable();
-            $table->unsignedBigInteger('discount_val');
-            $table->unsignedBigInteger('tax');
-            $table->unsignedBigInteger('total');
-            $table->integer('invoice_id')->unsigned();
-            $table->foreign('invoice_id')->references('id')->on('invoices')->onDelete('cascade');
-            $table->integer('item_id')->unsigned()->nullable();
-            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
             $table->integer('company_id')->unsigned()->nullable();
+            $table->integer('quantity')->nullable();
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
+            $table->integer('unit_id')->unsigned()->nullable();
+            $table->foreign('unit_id')->references('id')->on('units')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -41,6 +35,6 @@ class CreateInvoiceItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoice_items');
+        Schema::dropIfExists('items');
     }
 }

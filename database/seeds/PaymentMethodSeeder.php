@@ -12,9 +12,9 @@ class PaymentMethodSeeder extends Seeder
      */
     public function run()
     {
-        PaymentMethod::create(['name' => 'Cash', 'company_id' => 1]);
-        PaymentMethod::create(['name' => 'Check', 'company_id' => 1]);
-        PaymentMethod::create(['name' => 'Credit Card', 'company_id' => 1]);
-        PaymentMethod::create(['name' => 'Bank Transfer', 'company_id' => 1]);
+        PaymentMethod::create(['name' => 'Efectivo', 'company_id' => 1]);
+        PaymentMethod::create(['name' => 'Pago movil', 'company_id' => 1]);
+        PaymentMethod::create(['name' => 'Tarjeta de debito/credito', 'company_id' => 1]);
+        PaymentMethod::create(['name' => 'Transferencia bancaria', 'company_id' => 1]);
     }
 }

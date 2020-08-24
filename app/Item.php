@@ -12,6 +12,7 @@ class Item extends Model
         'name',
         'unit',
         'price',
+        'quantity',
         'company_id',
         'description'
     ];
