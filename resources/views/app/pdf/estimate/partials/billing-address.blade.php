@@ -1,5 +1,5 @@
 @if($estimate->user->billingaddress)
-    <p class="billing-address-label">Bill To,</p>
+    <p class="billing-address-label">Factura a,</p>
     @if($estimate->user->billingaddress->name)
         <p class="billing-address-name">
             {{$estimate->user->billingaddress->name}}
@@ -32,7 +32,7 @@
 
         @if($estimate->user->billingaddress->phone)
             <p class="billing-address">
-                Phone :{{$estimate->user->billingaddress->phone}}
+                Teléfono :{{$estimate->user->billingaddress->phone}}
             </p>
         @endif
     </p>

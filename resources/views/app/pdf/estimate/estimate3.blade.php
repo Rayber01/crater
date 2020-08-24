@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Estimate</title>
+    <title>Presupuesto</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <style type="text/css">
@@ -426,15 +426,15 @@
                 <div class="estimate-details-container">
                     <table>
                         <tr>
-                            <td class="attribute-label">Estimate Number</td>
+                            <td class="attribute-label">Numeno de presupuesto</td>
                             <td class="attribute-value"> &nbsp;{{$estimate->estimate_number}}</td>
                         </tr>
                         <tr>
-                            <td class="attribute-label">Estimate Date </td>
+                            <td class="attribute-label">Fecha de presupuesto</td>
                             <td class="attribute-value"> &nbsp;{{$estimate->formattedEstimateDate}}</td>
                         </tr>
                         <tr>
-                            <td class="attribute-label">Expiry Date</td>
+                            <td class="attribute-label">Fecha de vencimiento</td>
                             <td class="attribute-value"> &nbsp;{{$estimate->formattedExpiryDate}}</td>
                         </tr>
                     </table>

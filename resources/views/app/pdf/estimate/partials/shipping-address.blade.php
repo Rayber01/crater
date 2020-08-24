@@ -1,5 +1,5 @@
 @if($estimate->user->shippingaddress)
-    <p class="shipping-address-label">Ship To,</p>
+    <p class="shipping-address-label">Despachar a,</p>
     @if($estimate->user->shippingaddress->name)
         <p class="shipping-address-name">
             {{$estimate->user->shippingaddress->name}}
@@ -32,7 +32,7 @@
 
         @if($estimate->user->shippingAddress->phone)
             <p class="shipping-address">
-                Phone :{{$estimate->user->shippingaddress->phone}}
+                Teléfono :{{$estimate->user->shippingaddress->phone}}
             </p>
         @endif
 

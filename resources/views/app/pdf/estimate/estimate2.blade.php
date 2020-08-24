@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Estimate</title>
+    <title>Presupuesto</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style type="text/css">
         /* -- Base -- */
@@ -16,8 +16,7 @@
             margin-top: 50px;
         }
 
-        table {
-            border-collapse: collapse;
+        table             border-collapse: collapse;
         }
 
         hr {
@@ -407,7 +406,7 @@
                     @endif
                 </td>
                 <td width="40%" class="header-section-right estimate-details-container">
-                    <h1>Estimate</h1>
+                    <h1>Presupuesto</h1>
                     <h4>{{$estimate->estimate_number}}</h4>
                     <h4>{{$estimate->formattedEstimateDate}}</h4>
                 </td>
