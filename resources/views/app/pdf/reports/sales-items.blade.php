@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sales Item Report</title>
+    <title>Informe de Ventas</title>
     <style type="text/css">
         body {
             font-family: "DejaVu Sans";
@@ -150,12 +150,12 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <p class="sub-heading-text text-center">Sales Report: By Item</p>
+                    <p class="sub-heading-text text-center">Informe de ventas: Por artículo</p>
                 </td>
             </tr>
         </table>
         
-        <p class="sales-items-title">Items</p>
+        <p class="sales-items-title">Artículo</p>
         @foreach ($items as $item)
             <div class="items-table-container">
                 <table class="items-table">
@@ -190,7 +190,7 @@
     <table class="report-footer">
         <tr>
             <td>
-                <p class="report-footer-label">TOTAL SALES</p>
+                <p class="report-footer-label">VENTAS TOTALES</p>
             </td>
             <td>
                 <p class="report-footer-value">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sales Customer Report</title>
+    <title>Informe de ventas</title>
     <style type="text/css">
         body {
             font-family: "DejaVu Sans";
@@ -150,7 +150,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <p class="sub-heading-text text-center">Sales Report: By Customer</p>
+                    <p class="sub-heading-text text-center">Informe de ventas: Por cliente</p>
                 </td>
             </tr>
         </table>
@@ -191,7 +191,7 @@
     <table class="report-footer">
         <tr>
             <td>
-                <p class="report-footer-label">TOTAL SALES</p>
+                <p class="report-footer-label">VENTAS TOTALES</p>
             </td>
             <td>
                 <p class="report-footer-value">

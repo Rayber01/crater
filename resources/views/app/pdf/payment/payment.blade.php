@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Invoice</title>
+    <title>Factura</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <style type="text/css">
@@ -281,7 +281,7 @@
     <hr style="border: 0.620315px solid #E8E8E8;">
 
     <p class="content-heading">
-        <span>PAYMENT RECEIPT</span>
+        <span>RECIBO DE PAGO</span>
     </p>
 
     <div class="content-wrapper">
@@ -298,20 +298,20 @@
             <div class="payment-details-container">
                 <table width="100%">
                     <tr>
-                        <td class="attribute-label">Payment Date</td>
+                        <td class="attribute-label">Fecha de pago</td>
                         <td class="attribute-value"> &nbsp;{{$payment->formattedPaymentDate}}</td>
                     </tr>
                     <tr>
-                        <td class="attribute-label">Payment Number</td>
+                        <td class="attribute-label">Número de pago</td>
                         <td class="attribute-value"> &nbsp;{{$payment->payment_number}}</td>
                     </tr>
                     <tr>
-                        <td class="attribute-label">Payment Mode</td>
+                        <td class="attribute-label">Modalidad de pago</td>
                         <td class="attribute-value"> &nbsp;{{$payment->paymentMethod ? $payment->paymentMethod->name : '-'}}</td>
                     </tr>
                     @if ($payment->invoice && $payment->invoice->invoice_number)
                         <tr>
-                            <td class="attribute-label">Invoice</td>
+                            <td class="attribute-label">Factura</td>
                             <td class="attribute-value"> &nbsp;{{$payment->invoice->invoice_number}}</td>
                         </tr>
                     @endif
@@ -321,7 +321,7 @@
         <div style="clear: both;"></div>
     </div>
     <div class="total-display-box">
-        <p class="total-display-label">Amount Received</p>
+        <p class="total-display-label">Monto recibido</p>
         <span>{!! format_money_pdf($payment->amount, $payment->user->currency) !!}</span>
     </div>
 </body>

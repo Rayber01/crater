@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Tax Summary Report</title>
+    <title>Informe de resumen de impuestos</title>
     <style type="text/css">
         body {
             font-family: "DejaVu Sans";
@@ -152,11 +152,11 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <p class="sub-heading-text">TAX REPORT</p>
+                    <p class="sub-heading-text">INFORME DE IMPUESTOS</p>
                 </td>
             </tr>
         </table>
-        <p class="tax-types-title">Tax Types</p>
+        <p class="tax-types-title">Tipos de impuestos</p>
         <div class="tax-table-container">
             <table class="tax-table">
                 @foreach ($taxTypes as $tax)
@@ -190,7 +190,7 @@
     <table class="report-footer">
         <tr>
             <td>
-                <p class="report-footer-label">TOTAL TAX</p>
+                <p class="report-footer-label">TOTAL DE IMPUESTOS</p>
             </td>
             <td>
                 <p class="report-footer-value">

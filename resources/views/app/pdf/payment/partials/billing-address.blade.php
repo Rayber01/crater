@@ -1,5 +1,5 @@
 @if($payment->user->billingaddress)
-    <p class="billing-address-label">Received From:</p>
+    <p class="billing-address-label">Recibido de:</p>
     @if($payment->user->billingaddress->name)
         <p class="billing-address-name">
             {{$payment->user->billingaddress->name}}
@@ -26,7 +26,7 @@
         @endif
         @if($payment->user->billingaddress->phone)
             <p class="billing-address">
-                Phone :{{$payment->user->billingaddress->phone}}
+                Teléfono:{{$payment->user->billingaddress->phone}}
             </p>
         @endif
     </p>

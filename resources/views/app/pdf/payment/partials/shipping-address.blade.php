@@ -1,5 +1,5 @@
 @if($payment->user->shippingaddress)
-    <p class="shipping-address-label">Ship To,</p>
+    <p class="shipping-address-label">Despachar a,</p>
     @if($payment->user->shippingaddress->name)
         <p class="shipping-address-name">
             {{$payment->user->shippingaddress->name}}
@@ -32,7 +32,7 @@
 
         @if($payment->user->phone)
             <p class="shipping-address">
-                Phone :{{$payment->user->shippingaddress->phone}}
+                Teléfono :{{$payment->user->shippingaddress->phone}}
             </p>
         @endif
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Expenses Report</title>
+    <title>Informe de gastos</title>
     <style type="text/css">
         body {
             font-family: "DejaVu Sans";
@@ -147,11 +147,11 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <p class="sub-heading-text">EXPENSES REPORT</p>
+                    <p class="sub-heading-text">INFORME DE GASTOS</p>
                 </td>
             </tr>
         </table>
-        <p class="expenses-title">Expenses</p>
+        <p class="expenses-title">Gastos</p>
         <div class="expenses-table-container">
             <table class="expenses-table">
                 @foreach ($expenseCategories as $expenseCategory)
@@ -182,7 +182,7 @@
     <table class="report-footer">
         <tr>
             <td>
-                <p class="report-footer-label">TOTAL EXPENSE</p>
+                <p class="report-footer-label">TOTAL GASTADO</p>
             </td>
             <td>
                 <p class="report-footer-value">{!! format_money_pdf($totalExpense) !!}</p>
