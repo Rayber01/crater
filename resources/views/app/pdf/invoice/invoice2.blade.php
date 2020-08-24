@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Invoice</title>
+    <title>Factura</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style type="text/css">
         /* -- Base -- */
@@ -388,7 +388,7 @@
                     @endif
                 </td>
                 <td width="40%" class="header-section-right invoice-details-container">
-                    <h1>Invoice</h1>
+                    <h1>Factura</h1>
                     <h4>{{$invoice->invoice_number}}</h4>
                     <h4>{{$invoice->formattedInvoiceDate}}</h4>
                 </td>
