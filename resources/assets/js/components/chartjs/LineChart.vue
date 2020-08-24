@@ -14,7 +14,7 @@ export default {
     labels: {
       type: Array,
       require: true,
-      default: Array,
+      default: Array
     },
     values: {
       type: Array,
@@ -85,7 +85,7 @@ export default {
       },
     }
     let data = {
-      labels: this.labels,
+      labels: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
       datasets: [
         {
           label: 'Sales',

@@ -47,6 +47,23 @@
                 </div>
               </div>
               <div class="form-group">
+                <label>Cantidad</label><span class="text-danger"> *</span>
+                <div class="base-input">
+                  <base-input
+                  v-model.trim="formData.quantity"
+                  :invalid="$v.formData.quantity.$error"
+                  type="number"
+                  name="quantity"
+                  @input="$v.formData.quantity.$touch()"
+                />
+                </div>
+                <div v-if="$v.formData.quantity.$error">
+                  <span v-if="!$v.formData.quantity.required" class="text-danger">Este campo es requerido</span>
+                  <span v-if="!$v.formData.quantity.maxLength" class="text-danger">{{ $t('validation.price_maxlength') }}</span>
+                  <span v-if="!$v.formData.quantity.minValue" class="text-danger">El valor minimo es 1</span>
+                </div>
+              </div>
+              <div class="form-group">
                 <label>{{ $t('items.unit') }}</label>
                 <base-select
                   v-model="formData.unit"
@@ -131,6 +148,7 @@ export default {
         name: '',
         description: '',
         price: '',
+        quantity: '',
         unit_id: null,
         unit: null,
         taxes: [],
@@ -195,6 +213,12 @@ export default {
         numeric,
         maxLength: maxLength(20),
         minValue: minValue(0.1)
+      },
+      quantity: {
+        required,
+        numeric,
+        maxLength: maxLength(20),
+        minValue: minValue(1)
       },
       description: {
         maxLength: maxLength(255)

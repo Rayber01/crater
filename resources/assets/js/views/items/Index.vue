@@ -181,6 +181,10 @@
           </template>
         </table-column>
         <table-column
+          :label="'Cantidad'"
+          show="quantity"
+        />
+        <table-column
           :label="$t('items.added_on')"
           sort-as="created_at"
           show="formattedCreatedAt"

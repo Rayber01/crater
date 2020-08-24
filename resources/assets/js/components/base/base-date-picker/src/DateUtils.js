@@ -1,4 +1,4 @@
-import en from './locale/translations/en'
+import en from './locale/translations/es'
 
 const utils = {
   /**

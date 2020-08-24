@@ -234,9 +234,23 @@
         <table-column :label="$t('estimates.status')" show="status">
           <template slot-scope="row">
             <span> {{ $t('estimates.status') }}</span>
-            <span :class="'est-status-' + row.status.toLowerCase()">{{
-              row.status
-            }}</span>
+            <span :class="'est-status-' + row.status.toLowerCase()">
+            {{
+              row.status === 'DRAFT'
+                ? 'BORRADOR'
+                : row.status === 'ACCEPTED'
+                  ? 'ACEPTADO'
+                  : row.status === 'REJECTED'
+                    ? 'RECHAZADO'
+                    : row.status === 'SENT'
+                      ? 'ENVIADO'
+                      : row.status === 'EXPIRED'
+                        ? 'VENCIDO'
+                        : row.status === 'VIEWED'
+                          ? 'VISTO'
+                          : row.status
+            }}
+            </span>
           </template>
         </table-column>
         <table-column
@@ -394,12 +408,12 @@ export default {
     return {
       showFilters: false,
       currency: null,
-      status: ['DRAFT', 'SENT', 'VIEWED', 'EXPIRED', 'ACCEPTED', 'REJECTED'],
+      status: ['BORRADOR', 'ENVIADO', 'VISTO', 'VENCIDO', 'ACEPTADO', 'RECHAZADO'],
       filtersApplied: false,
       isRequestOngoing: true,
       filters: {
         customer: '',
-        status: 'DRAFT',
+        status: '',
         from_date: '',
         to_date: '',
         estimate_number: ''
@@ -481,9 +495,23 @@ export default {
       this.filters.status = val
     },
     async fetchData ({ page, filter, sort }) {
+      var statusT;
+      if (this.filters.status === 'BORRADOR') {
+        statusT = 'DRAFT'
+      } if (this.filters.status === 'ENVIADO') {
+        statusT = 'SENT'
+      } if (this.filters.status === 'VISTO') {
+        statusT = 'VIEWED'
+      } if (this.filters.status === 'VENCIDO') {
+        statusT = 'EXPIRED'
+      } if (this.filters.status === 'ACEPTADO') {
+        statusT = 'ACCEPTED'
+      } if (this.filters.status === 'RECHAZADO') {
+        statusT = 'REJECTED'
+      }
       let data = {
         customer_id: this.filters.customer === '' ? this.filters.customer : this.filters.customer.id,
-        status: this.filters.status,
+        status: statusT,
         from_date: this.filters.from_date === '' ? this.filters.from_date : moment(this.filters.from_date).format('DD/MM/YYYY'),
         to_date: this.filters.to_date === '' ? this.filters.to_date : moment(this.filters.to_date).format('DD/MM/YYYY'),
         estimate_number: this.filters.estimate_number,

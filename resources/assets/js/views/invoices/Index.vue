@@ -248,9 +248,22 @@
             <span> {{ $t('invoices.status') }}</span>
             <span :class="'inv-status-' + row.status.toLowerCase()">{{
               row.status != 'PARTIALLY_PAID'
-                ? row.status
-                : row.status.replace('_', ' ')
-            }}</span>
+                ? row.status === 'DRAFT'
+                  ? row.status === 'SENT'
+                    ? row.status === 'VIEWED'
+                      ? row.status === 'UNPAID'
+                        ? row.status === 'OVERDUE'
+                          ? row.status === 'COMPLETED'
+                            ? 'DESCONOCIDO'
+                            : 'COMPLETADO'
+                          : 'VENCIDO'
+                        : 'PENDIENTE'
+                      : 'VISTO'
+                    : 'BORRADOR'
+                  : 'ENVIADO'
+                : 'PAGADO PARCIALMENTE'
+            }}
+            </span>
           </template>
         </table-column>
         <table-column :label="$t('invoices.paid_status')" sort-as="paid_status">
@@ -258,8 +271,12 @@
             <span>{{ $t('invoices.paid_status') }}</span>
             <span :class="'inv-status-' + row.paid_status.toLowerCase()">{{
               row.paid_status != 'PARTIALLY_PAID'
-                ? row.paid_status
-                : row.paid_status.replace('_', ' ')
+                ? row.paid_status === 'UNPAID'
+                  ? row.paid_status === 'PAID'
+                    ? 'UNKNOWN'
+                    : 'NO PAGADO'
+                  : 'PAGADO'
+                : 'PAGADO PARCIALMENTE'
             }}</span>
           </template>
         </table-column>
@@ -395,23 +412,23 @@ export default {
       currency: null,
       status: [
         {
-          label: 'Status',
+          label: 'Estatus',
           isDisable: true,
           options: [
-            { name: 'DRAFT', value: 'DRAFT' },
-            { name: 'DUE', value: 'UNPAID' },
-            { name: 'SENT', value: 'SENT' },
-            { name: 'VIEWED', value: 'VIEWED' },
-            { name: 'OVERDUE', value: 'OVERDUE' },
-            { name: 'COMPLETED', value: 'COMPLETED' }
+            { name: 'BORRADOR', value: 'DRAFT' },
+            { name: 'PENDIENTE', value: 'UNPAID' },
+            { name: 'ENVIADA', value: 'SENT' },
+            { name: 'VISTO', value: 'VIEWED' },
+            { name: 'VENCIDO', value: 'OVERDUE' },
+            { name: 'COMPLETADO', value: 'COMPLETED' }
           ]
         },
         {
-          label: 'Paid Status',
+          label: 'Estatus pagado',
           options: [
-            { name: 'UNPAID', value: 'UNPAID' },
-            { name: 'PAID', value: 'PAID' },
-            { name: 'PARTIALLY PAID', value: 'PARTIALLY_PAID' }
+            { name: 'NO PAGADO', value: 'UNPAID' },
+            { name: 'PAGADO', value: 'PAID' },
+            { name: 'PAGADO PARCIALMENTE', value: 'PARTIALLY_PAID' }
           ]
         }
       ],
@@ -419,7 +436,7 @@ export default {
       isRequestOngoing: true,
       filters: {
         customer: '',
-        status: { name: 'DUE', value: 'UNPAID' },
+        status: { name: 'PENDIENTE', value: 'UNPAID' },
         from_date: '',
         to_date: '',
         invoice_number: ''

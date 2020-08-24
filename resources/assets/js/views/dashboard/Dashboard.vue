@@ -174,7 +174,25 @@
             >
               <template slot-scope="row" >
                 <span> {{ $t('invoices.status') }}</span>
-                <span :class="'inv-status-'+row.status.toLowerCase()">{{ (row.status != 'PARTIALLY_PAID')? row.status : row.status.replace('_', ' ') }}</span>
+                <span :class="'inv-status-'+row.status.toLowerCase()">
+                  {{ 
+                    row.status != 'PARTIALLY_PAID'
+                      ? row.status === 'DRAFT'
+                        ? row.status === 'SENT'
+                          ? row.status === 'VIEWED'
+                            ? row.status === 'UNPAID'
+                              ? row.status === 'OVERDUE'
+                                ? row.status === 'COMPLETED'
+                                  ? 'DESCONOCIDO'
+                                  : 'COMPLETADO'
+                                : 'VENCIDO'
+                              : 'PENDIENTE'
+                            : 'VISTO'
+                          : 'BORRADOR'
+                        : 'ENVIADO'
+                      : 'PAGADO PARCIALMENTE' 
+                  }}
+                </span>
               </template>
             </table-column>
             <table-column :label="$t('dashboard.recent_invoices_card.amount_due')" show="due_amount" sort-as="due_amount">
@@ -256,7 +274,23 @@
               show="status" >
               <template slot-scope="row" >
                 <span> {{ $t('estimates.status') }}</span>
-                <span :class="'est-status-'+row.status.toLowerCase()">{{ row.status }}</span>
+                <span :class="'est-status-'+row.status.toLowerCase()">
+                {{ 
+                  row.status === 'DRAFT'
+                    ? 'BORRADOR'
+                    : row.status === 'ACCEPTED'
+                      ? 'ACEPTADO'
+                      : row.status === 'REJECTED'
+                        ? 'RECHAZADO'
+                        : row.status === 'SENT'
+                          ? 'ENVIADO'
+                          : row.status === 'EXPIRED'
+                            ? 'VENCIDO'
+                            : row.status === 'VIEWED'
+                              ? 'VISTO'
+                              : row.status 
+                }}
+                </span>
               </template>
             </table-column>
             <table-column :label="$t('dashboard.recent_estimate_card.amount_due')" show="total" sort-as="total">
@@ -357,8 +391,8 @@ export default {
       currency: { precision: 2, thousand_separator: ',', decimal_separator: '.', symbol: '$' },
       isLoaded: false,
       fetching: false,
-      years: ['This year', 'Previous year'],
-      selectedYear: 'This year'
+      years: ['Este año', 'Año pasado'],
+      selectedYear: 'Este año'
     }
   },
   computed: {
@@ -389,7 +423,7 @@ export default {
   },
   watch: {
     selectedYear (val) {
-      if (val === 'Previous year') {
+      if (val === 'Año pasado') {
         let params = {previous_year: true}
         this.loadData(params)
       } else {

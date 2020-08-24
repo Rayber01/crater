@@ -57,8 +57,8 @@
     "choose_template": "Elige una plantilla",
     "choose": "Escoger",
     "remove": "Eliminar",
-    "powered_by": "Impulsado por",
-    "bytefury": "Bytefury",
+    "powered_by": "Creado por",
+    "bytefury": "Rayber",
     "select_a_status": "Selecciona un estado",
     "select_a_tax": "Selecciona un impuesto",
     "search": "Buscar",
@@ -102,7 +102,7 @@
     },
     "recent_invoices_card": {
       "title": "Facturas adeudadas",
-      "due_on": "Debido a",
+      "due_on": "Fecha",
       "customer": "Cliente",
       "amount_due": "Cantidad Debida",
       "actions": "Acciones",
@@ -492,7 +492,7 @@
     "update_report": "Informe de actualización",
     "report": "Informe | Informes",
     "profit_loss": {
-      "profit_loss": "Pérdida de beneficios",
+      "profit_loss": "Pérdida & Ganancias",
       "to_date": "Hasta la fecha",
       "from_date": "A partir de la fecha",
       "date_range": "Seleccionar rango de fechas"
@@ -604,7 +604,7 @@
       "company_info": "Información de la compañía",
       "company_name": "Nombre de Empresa",
       "company_logo": "Logo de la compañía",
-      "section_description": "Información sobre su empresa que se mostrará en las facturas, presupuestos y otros documentos creados por Crater.",
+      "section_description": "Información sobre su empresa que se mostrará en las facturas, presupuestos y otros documentos.",
       "phone": "Teléfono",
       "country": "País",
       "state": "Estado",
@@ -719,9 +719,9 @@
       "email": "Enviar notificaciones a",
       "description": "¿Qué notificaciones por correo electrónico le gustaría recibir cuando algo cambia?",
       "invoice_viewed": "Factura vista",
-      "invoice_viewed_desc": "Cuando su cliente vio la factura enviada a través del panel de control de Crater.",
+      "invoice_viewed_desc": "Cuando su cliente vio la factura enviada a través del panel de control.",
       "estimate_viewed": "Presupuesto visto",
-      "estimate_viewed_desc": "Cuando su cliente vio el presupuesto enviado a través del panel de control de Crater.",
+      "estimate_viewed_desc": "Cuando su cliente vio el presupuesto enviado a través del panel de control.",
       "save": "Guardar",
       "email_save_message": "Correo electrónico guardado con éxito",
       "please_enter_email": "Por favor, introduzca su correo electrónico"
@@ -730,7 +730,7 @@
       "title": "Tipos de impuestos",
       "add_tax": "Agregar impuesto",
       "edit_tax": "Editar impuesto",
-      "description": "Puede agregar o eliminar impuestos a su gusto. Crater admite impuestos sobre artículos individuales, así como sobre la factura.",
+      "description": "Puede agregar o eliminar impuestos a su gusto. Admite impuestos sobre artículos individuales, así como sobre la factura.",
       "add_new_tax": "Agregar nuevo impuesto",
       "tax_settings": "Configuraciones de impuestos",
       "tax_per_item": "Impuesto por artículo",
@@ -886,15 +886,15 @@
     }
   },
   "layout_login": {
-    "copyright_crater": "Copyright @ Crater - 2020",
-    "super_simple_invoicing": "Facturación super simple",
-    "for_freelancer": "para autónomos y",
-    "small_businesses": "pequeñas empresas",
-    "crater_help": "Crater te ayuda a rastrear gastos, registrar pagos y generar hermosas",
-    "invoices_and_estimates": "facturas y presupuestos con capacidad para elegir múltiples plantillas."
+    "copyright_crater": "Copyright Las Yaya de Okurero - 2020",
+    "super_simple_invoicing": "Sistema de Facturación",
+    "for_freelancer": "Las Yayas",
+    "small_businesses": "de Okurare",
+    "crater_help": "Rastrear gastos, registrar pagos y generar",
+    "invoices_and_estimates": "facturas y presupuestos."
   },
   "validation": {
-    "invalid_url": "URL no válida (por ejemplo, http://www.crater.com)",
+    "invalid_url": "URL no válida (por ejemplo, http://www.google.com)",
     "required": "Se requiere campo",
     "email_incorrect": "Email incorrecto.",
     "email_already_taken": "Este email ya está en uso",

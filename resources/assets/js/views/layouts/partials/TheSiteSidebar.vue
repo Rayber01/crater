@@ -76,11 +76,11 @@ export default {
             icon: 'signal',
             route: '/admin/reports'
           },
-          {
+          /*{
             title: 'navigation.settings',
             icon: 'cog',
             route: '/admin/settings'
-          }
+          }*/
         ]
 
       ]
